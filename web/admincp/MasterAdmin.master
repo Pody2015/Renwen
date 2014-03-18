@@ -1,0 +1,66 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterAdmin.master.cs" Inherits="admincp_MasterAdmin" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>浙江树人大学招生网管理中心</title>
+    <link type="text/css" href="css/layout.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="js/easyTooltip.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.7.2.custom.min.js"></script>
+    <script type="text/javascript" src="js/jquery.wysiwyg.js"></script>
+    <script type="text/javascript" src="js/hoverIntent.js"></script>
+    <script type="text/javascript" src="js/superfish.js"></script>
+    <script type="text/javascript" src="js/custom.js"></script>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="container">
+        <div id="header">
+            <div id="top">
+                <div class="logo">
+                    <a href="#" title="浙江树人大学招生网管理中心" class="tooltip">
+                        <img src="assets/logo.png" alt="Wide Admin" /></a>
+                </div>
+                <div class="meta">
+                    <p>
+                        Welcome, <%=username%>!</p>
+                    <ul>
+                        <li><a href="./logout.aspx" title="End administrator session" class="tooltip"><span class="ui-icon ui-icon-power">
+                        </span>安全退出</a></li>
+                        <li><a href="./sysCache.aspx" title="Cache Management" class="tooltip"><span class="ui-icon ui-icon-wrench">
+                        </span>清理缓存</a></li>
+                        <li><a href="#" title="Change Your Password" class="tooltip"><span class="ui-icon ui-icon-person">
+                        </span>密码修改</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="navbar">
+                <ul class="nav">
+                    <li><a href="./Default.aspx">管理首页</a></li>
+                    <%=GetUserFunction()%>
+                </ul>
+            </div>
+        </div>
+        <div id="bgwrap">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </div>
+    </form>
+    <div id="footer">
+			<p class="mid">
+				<a href="#" title="Top" class="tooltip">返回顶部</a>·<a href="./LOGOUT.ASPX" title="End administrator session" class="tooltip">安全退出</a>
+			</p>
+			<p class="mid">
+				<!-- Change this to your own once purchased -->
+				版权所有 © <a href="http://d.dsrj.net">小D</a> 2012. All rights reserved.
+				<!-- -->
+			</p>
+		</div>
+</body>
+</html>
