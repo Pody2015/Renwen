@@ -45,6 +45,8 @@ public partial class admincp_Default : System.Web.UI.Page
         ServerStart = ((Double)System.Environment.TickCount / 3600000).ToString("N2"); //开机运行时长
         //PrStart = GetPrStart(); //进程开始时间
         AspNetN = GetAspNetN(); //AspNet 内存占用
+        if(AspNetN.Length >= 5 )
+            AspNetN=AspNetN.Substring(0, 5);
         AspNetCpu = GetAspNetCpu(); //AspNet CPU时间
         ServerSessions = Session.Contents.Count.ToString(); //Session总数
         ServerApp = Application.Contents.Count.ToString(); //Application总数

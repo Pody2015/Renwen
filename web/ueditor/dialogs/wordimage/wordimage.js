@@ -5,10 +5,14 @@
  * Time: 下午12:50
  * To change this template use File | Settings | File Templates.
  */
+
+
+
 var wordImage = {};
 //(function(){
 var g = baidu.g,
-	flashObj;
+	flashObj,flashContainer;
+
 wordImage.init = function(opt, callbacks) {
 	showLocalPath("localPath");
 	//createCopyButton("clipboard","localPath");
@@ -17,24 +21,36 @@ wordImage.init = function(opt, callbacks) {
 	addOkListener();
 };
 
+function hideFlash(){
+    flashObj = null;
+    flashContainer.innerHTML = "";
+}
 function addOkListener() {
 	dialog.onok = function() {
 		if (!imageUrls.length) return;
 		var images = domUtils.getElementsByTagName(editor.document,"img");
+        editor.fireEvent('saveScene');
 		for (var i = 0,img; img = images[i++];) {
 			var src = img.getAttribute("word_img");
 			if (!src) continue;
 			for (var j = 0,url; url = imageUrls[j++];) {
-				if (src.indexOf(url.title) != -1) {
-					img.src = editor.options.imagePath + url.url;
-					img.setAttribute("data_ue_src", editor.options.imagePath + url.url);  //同时修改"data_ue_src"属性
-					parent.baidu.editor.dom.domUtils.removeAttributes(img, ["word_img","style","width","height"]);
+				if (src.indexOf(url.original.replace(" ","")) != -1) {
+					img.src = editor.options.wordImagePath + url.url;
+					img.setAttribute("_src", editor.options.wordImagePath + url.url);  //同时修改"_src"属性
+					img.setAttribute("title",url.title);
+                    domUtils.removeAttributes(img, ["word_img","style","width","height"]);
 					editor.fireEvent("selectionchange");
 					break;
 				}
 			}
+
 		}
+        editor.fireEvent('saveScene');
+        hideFlash();
 	};
+    dialog.oncancel = function(){
+        hideFlash();
+    }
 }
 
 /**
@@ -49,35 +65,48 @@ function addUploadListener() {
 
 function showLocalPath(id) {
     //单张编辑
-    if(editor.word_img.length==1){
-        g(id).value = editor.word_img[0];
+    var img = editor.selection.getRange().getClosedNode();
+    var images = editor.execCommand('wordimage');
+    if(images.length==1 || img && img.tagName == 'IMG'){
+        g(id).value = images[0];
         return;
     }
-	var path = editor.word_img[0];
+	var path = images[0];
     var leftSlashIndex  = path.lastIndexOf("/")||0,  //不同版本的doc和浏览器都可能影响到这个符号，故直接判断两种
-            rightSlashIndex = path.lastIndexOf("\\")||0,
-            separater = leftSlashIndex > rightSlashIndex ? "/":"\\" ;
+        rightSlashIndex = path.lastIndexOf("\\")||0,
+        separater = leftSlashIndex > rightSlashIndex ? "/":"\\" ;
 
 	path = path.substring(0, path.lastIndexOf(separater)+1);
 	g(id).value = path;
 }
 
 function createFlashUploader(opt, callbacks) {
+    //由于lang.flashI18n是静态属性，不可以直接进行修改，否则会影响到后续内容
+    var i18n = utils.extend({},lang.flashI18n);
+    //处理图片资源地址的编码，补全等问题
+    for(var i in i18n){
+        if(!(i in {"lang":1,"uploadingTF":1,"imageTF":1,"textEncoding":1}) && i18n[i]){
+            i18n[i] = encodeURIComponent(editor.options.langPath + editor.options.lang + "/images/" + i18n[i]);
+        }
+    }
+    opt = utils.extend(opt,i18n,false);
 	var option = {
 		createOptions:{
 			id:'flash',
 			url:opt.flashUrl,
 			width:opt.width,
 			height:opt.height,
-			errorMessage:'Flash插件初始化失败，请更新您的FlashPlayer版本之后重试！',
+			errorMessage:lang.flashError,
 			wmode:browser.safari ? 'transparent' : 'window',
 			ver:'10.0.0',
 			vars:opt,
 			container:opt.container
 		}
 	};
+
 	option = extendProperty(callbacks, option);
 	flashObj = new baidu.flash.imageUploader(option);
+    flashContainer = $G(opt.container);
 }
 
 function extendProperty(fromObj, toObj) {
@@ -92,7 +121,7 @@ function extendProperty(fromObj, toObj) {
 //})();
 
 function getPasteData(id) {
-	baidu.g("msg").innerHTML = "　图片地址已复制成功！</br>";
+	baidu.g("msg").innerHTML = lang.copySuccess + "</br>";
 	setTimeout(function() {
 		baidu.g("msg").innerHTML = "";
 	}, 5000);

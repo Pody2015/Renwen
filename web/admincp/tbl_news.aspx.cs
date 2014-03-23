@@ -19,7 +19,7 @@ public partial class admincp_tbl_news : System.Web.UI.Page
     private void BindData()
     {
         zs.BLL.Tbl_News bll = new zs.BLL.Tbl_News();
-        UsersBind(bll.GetModelList(""),15);
+        UsersBind(bll.GetModelList("1=1 order by addtime desc"), 15);
     }
 
     private void UsersBind(List<zs.Model.Tbl_News> userList, int pageSize)//repeater分页并绑定

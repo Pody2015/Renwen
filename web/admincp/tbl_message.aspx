@@ -6,7 +6,7 @@
 tbody tr:hover{background-color:#eeeeee;}
 tbody a:visited{color:#eeeeee;}
 </style>
-    <script src="./js/artDialog.js?skin=black" type="text/javascript"></script>
+    <script src="./js/artDialog.js?skin=idialog" type="text/javascript"></script>
     <script>
         function tan(num) {
             art.dialog({
@@ -28,7 +28,7 @@ tbody a:visited{color:#eeeeee;}
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 <div id="content">
         <div id="main">
-            <table style="width: 100%;" class="fullwidth">
+            <table style="width: 100%;" class="table">
             <thead>
                 <tr>
                     <td>&nbsp;标题</td>
@@ -74,38 +74,21 @@ tbody a:visited{color:#eeeeee;}
     <!-- End of Main Content -->
     <!-- Sidebar -->
     <div id="sidebar">
-        <h2>
-            日历</h2>
         <!-- Datepicker -->
-        <div id="datepicker">
-        </div>
+
         <div class="sort ui-sortable">
             <div class="box ui-widget ui-widget-content ui-corner-all portlet ui-helper-clearfix">
-                <div class="portlet-header ui-widget-header ui-corner-all">
-                    <span class="ui-icon ui-icon-circle-arrow-s"></span>查看选项</div>
+                
                 <div class="portlet-content">
-                    <input id="Button3" type="button" value="所有留言" onclick="javascript:window.location='./tbl_message.aspx'" class="button" />
-                    <input id="Button4" type="button" value="未回复留言" onclick="javascript:window.location='./tbl_message.aspx?isShow=0'" class="button" />
+                    <input id="Button3" type="button" value="所有留言" onclick="javascript:window.location='./tbl_message.aspx'" class="btn btn-default" />
+                    <input id="Button4" type="button" value="未回复留言" onclick="javascript:window.location='./tbl_message.aspx?isShow=0'" class="btn btn-default" />
                 </div>
             </div>
-            <div class="box ui-widget ui-widget-content ui-corner-all portlet ui-helper-clearfix">
-                <div class="portlet-header ui-widget-header ui-corner-all">
-                    <span class="ui-icon ui-icon-circle-arrow-s"></span>注意事项</div>
-                <div class="portlet-content">
-                带红色标记的行为未回复的留言。
-                </div>
-            </div>
+            
         </div>
         <!-- End of Datepicker -->
         <!-- Statistics -->
-        <h2>
-            统计</h2>
-        <p>
-            <b>新闻:</b> 2201</p>
-        <p>
-            <b>留言:</b> 17092</p>
-        <p>
-            <b>用户:</b> 3788</p>
+        
         <!-- End of Statistics -->
     </div>
     <!-- End of Sidebar -->

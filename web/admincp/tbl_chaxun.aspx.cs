@@ -254,4 +254,8 @@ public partial class admincp_tbl_chaxun : System.Web.UI.Page
             BindData();
         }
     }
+    protected void Button2_Click(object sender, EventArgs e)
+    {
+        bll.DeleteList("");
+    }
 }

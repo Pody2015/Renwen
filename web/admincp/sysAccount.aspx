@@ -2,7 +2,7 @@
     CodeFile="sysAccount.aspx.cs" Inherits="admincp_sysAccount" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <script src="./js/artDialog.js?skin=black" type="text/javascript"></script>
+    <script src="./js/artDialog.js?skin=idialog" type="text/javascript"></script>
     <script>
         function tan(num) {
             art.dialog({
@@ -19,7 +19,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div id="content">
         <div id="main">
-            <table style="width: 100%;" class="fullwidth">
+            <table style="width: 100%;" class="table">
                 <thead>
                     <tr>
                         <td>
@@ -53,43 +53,18 @@
                                     </asp:DropDownList>
                                 </td>
                                 <td>
-                                    <input id="Button2" type="button" value="修改" onclick=tan(<%# Eval("id") %>) />
+                                    <input id="Button2" class="btn btn-primary btn-small" type="button" value="修改" onclick=tan(<%# Eval("id") %>) />
                                     &nbsp; 
-                                    <asp:Button ID="Button1" runat="server" Text="删除" CommandName="delete" CommandArgument=<%# Eval("id") %> OnClientClick="return confirm('真的删除？')" />
+                                    <asp:Button ID="Button1" CssClass="btn btn-danger btn-small" runat="server" Text="删除" CommandName="delete" CommandArgument=<%# Eval("id") %> OnClientClick="return confirm('真的删除？')" />
                                 </td>
                             </tr>
                         </ItemTemplate>
                     </asp:Repeater>
                 </tbody>
             </table>
-            <input id="Button1" type="button" value="新增用户" onclick="tan(0)" />
+            <input id="Button1" type="button" class="btn btn-primary" value="新增用户" onclick="tan(0)" />
         </div>
     </div>
-    <div id="sidebar">
-        <h2>
-            增加用户
-    </div>
-    <div id="sidebar">
-        <h2>
-            增加用户</h2>
-        <div class="sort ui-sortable">
-            <div class="box ui-widget ui-widget-content ui-corner-all portlet ui-helper-clearfix">
-                <div class="portlet-header ui-widget-header ui-corner-all">
-    增加用户</div>
-                <div class="portlet-content">
-                请注意分配用户角色！
-                </div>
-            </div>
-        </div>
-
-        <h2>
-            统计</h2>
-        <p>
-            <b>新闻:</b> 2201</p>
-        <p>
-            <b>留言:</b> 17092</p>
-        <p>
-            <b>用户:</b> 3788</p>
-        <!-- End of Statistics -->
-    </div>
+    
+    
 </asp:Content>

@@ -167,7 +167,8 @@ namespace zs.DAL
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("delete from Tbl_Chaxun ");
-			strSql.Append(" where id in ("+idlist + ")  ");
+            if (idlist != "")
+                strSql.Append(" where id in (" + idlist + ")  ");
 			int rows=DbHelperSQL.ExecuteSql(strSql.ToString());
 			if (rows > 0)
 			{

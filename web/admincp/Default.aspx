@@ -13,7 +13,7 @@
                 What would you like to do today?</p>
             <div class="pad20">
                 <!-- Big buttons -->
-                <table class="fullwidth" cellpadding="0" cellspacing="0" border="0">
+                <table class="table" cellpadding="0" cellspacing="0" border="0">
                     <thead>
                         <tr>
                             <td>
@@ -106,23 +106,6 @@
     </div>
     <!-- End of Main Content -->
     <!-- Sidebar -->
-    <div id="sidebar">
-        <h2>
-            日历</h2>
-        <!-- Datepicker -->
-        <div id="datepicker">
-        </div>
-        <!-- End of Datepicker -->
-        <!-- Statistics -->
-        <h2>
-            统计</h2>
-        <p>
-            <b>新闻:</b> 2201</p>
-        <p>
-            <b>留言:</b> 17092</p>
-        <p>
-            <b>用户:</b> 3788</p>
-        <!-- End of Statistics -->
-    </div>
+    
     <!-- End of Sidebar -->
 </asp:Content>

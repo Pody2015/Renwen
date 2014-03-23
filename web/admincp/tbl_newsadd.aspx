@@ -7,8 +7,8 @@
     <title></title>
     <link href="css/core.css" rel="stylesheet" type="text/css" />
 <link href="css/css3.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="../ueditor/editor_all.js"></script>
-<script type="text/javascript" src="../ueditor/editor_config.js"></script>
+    <script src="../ueditor/ueditor.config.js"></script>
+    <script src="../ueditor/ueditor.all.js"></script>
 <link rel="stylesheet" href="../ueditor/themes/default/ueditor.css"/>
 </head>
 <body>
@@ -27,6 +27,7 @@
     <script type="text/javascript">
         var editor = new baidu.editor.ui.Editor({
             textarea: 'myValue'
+            ,initialFrameWidth:900
         });
         editor.render("myEditor");
     </script>

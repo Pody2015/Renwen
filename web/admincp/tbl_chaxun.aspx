@@ -4,9 +4,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <div id="content">
+    <div class="row-fluid">
+    <div id="content" class="span9">
         <div id="main">
-            <table style="width: 100%;" class="fullwidth">
+            <table style="width: 100%;" class="table">
                 <thead>
                     <tr>
                         <td>
@@ -52,6 +53,7 @@
                     </asp:Repeater>
                 </tbody>
             </table>
+            <asp:Button ID="Button2" runat="server" CssClass="btn btn-danger" Text="删除所有查询数据" OnClick="Button2_Click" />
             <div style="float: right">
                 <asp:Literal ID="RecordCount" runat="server"></asp:Literal>条咨询 共有<asp:Literal ID="PageCount"
                     runat="server"></asp:Literal>页 当前第<asp:Literal ID="Pageindex" runat="server"></asp:Literal>页
@@ -66,42 +68,31 @@
     </div>
     <!-- End of Main Content -->
     <!-- Sidebar -->
-    <div id="sidebar">
-        <h2>
-            导入</h2>
+    <div id="sidebar" class="span3">
+        
         <!-- Datepicker -->
-        <div id="accordion" class="ui-accordion ui-widget ui-helper-reset" role="tablist">
-            <div>
-                <h3 class="ui-accordion-header ui-helper-reset ui-state-active ui-corner-top" role="tab"
-                    aria-expanded="true" tabindex="0">
-                    <span class="ui-icon ui-icon-triangle-1-s"></span><a href="#" title="First slide"
-                        class="tooltip">注意事项</a></h3>
-                <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ui-accordion-content-active"
-                    style="display: block; height: 180px; padding-top: 10px; padding-bottom: 10px;
-                    overflow: auto;" role="tabpanel">
+        <div id="accordion">
+            <div class="well">
+                <h3><a href="#" title="First slide"
+                        class="">注意事项</a></h3>
+                <div>
                     不提供修改功能，如果信息有错请重新将错误信息修正后导入。若身份证有错则请将信息删除后导入正确信息。</div>
             </div>
-            <div>
-                <h3 class="ui-accordion-header ui-helper-reset ui-state-default ui-corner-all" role="tab"
-                    aria-expanded="false" tabindex="-1">
-                    <span class="ui-icon ui-icon-triangle-1-e"></span><a href="#" title="Second slide"
-                        class="tooltip">模板下载</a></h3>
-                <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ui-accordion-content-active"
-                    style="overflow: auto; display: none; height: 180px; padding-top: 10px; padding-bottom: 10px;"
-                    role="tabpanel">
+            <div class="well">
+                <h3><a href="#" title="Second slide"
+                        class="">模板下载</a></h3>
+                <div>
                     此处下载的模版为标准模版，请按照格式编辑好相关信息后上传。那么有个需要注意的地方是所有单元格必须为文本类型，不得有'符号，不得有空格，sheet表名称必须是student。
                     模板下载：<a href="../import/sample.xls">sample.xls</a>
                     </div>
             </div>
-            <div>
-                <h3 class="ui-accordion-header ui-helper-reset ui-state-default ui-corner-all" role="tab"
-                    aria-expanded="false" tabindex="-1">
-                    <span class="ui-icon ui-icon-triangle-1-e"></span><a href="#" title="Third slide"
-                        class="tooltip">导入信息</a></h3>
-                <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom"
-                    style="height: 181px; display: none;" role="tabpanel">
+            <div class="well">
+                <h3>
+                    <a href="#" title="Third slide"
+                        class="">导入信息</a></h3>
+                <div >
                     <asp:FileUpload ID="FileUPexcel" runat="server" Width="190px" />
-    <asp:Button ID="Button1" runat="server" CssClass="button" Text="导入" OnClick="Button1_Click" />
+    <asp:Button ID="Button1" runat="server" CssClass="btn btn-primary btn-small" Text="导入" OnClick="Button1_Click" /><br />
     <asp:Label ID="lb_Result" runat="server" Text="此处将显示导入结果"></asp:Label>
                     
                     </div>
@@ -109,16 +100,9 @@
         </div>
         <!-- End of Datepicker -->
         <!-- Statistics -->
-        <h2>
-            统计</h2>
-        <p>
-            <b>新闻:</b> 2201</p>
-        <p>
-            <b>留言:</b> 17092</p>
-        <p>
-            <b>用户:</b> 3788</p>
+       
         <!-- End of Statistics -->
     </div>
     <!-- End of Sidebar -->
-    
+    </div>
 </asp:Content>

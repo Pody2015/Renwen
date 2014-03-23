@@ -9,6 +9,7 @@ using System.Text;
 public partial class admincp_tbl_xueyuan : System.Web.UI.Page
 {
     zs.BLL.Tbl_Xueyuan bll = new zs.BLL.Tbl_Xueyuan();
+    public string jianjie = "";
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
@@ -24,8 +25,9 @@ public partial class admincp_tbl_xueyuan : System.Web.UI.Page
             zs.Model.Tbl_Xueyuan model = bll.GetModel(int.Parse(Request.QueryString["id"].ToString()));
             this.tb_name.Text = model.name;
             this.tb_nameen.Text = model.nameen;
-            this.ASPxHtmlEditor_yuanzhang.Html = model.yuanzhang;
-            this.ASPxHtmlEditor_conts.Html = model.conts;
+            //this.ASPxHtmlEditor_yuanzhang.Html = model.yuanzhang;
+            //this.ASPxHtmlEditor_conts.Html = model.conts;
+            jianjie = Server.HtmlDecode( model.conts);
             this.btn_add.Text = "修改信息";
         }
     }
@@ -49,8 +51,9 @@ public partial class admincp_tbl_xueyuan : System.Web.UI.Page
             zs.Model.Tbl_Xueyuan model = bll.GetModel(int.Parse(Request.QueryString["id"].ToString()));
             model.name = this.tb_name.Text;
             model.nameen = this.tb_nameen.Text;
-            model.yuanzhang = this.ASPxHtmlEditor_yuanzhang.Html;
-            model.conts = this.ASPxHtmlEditor_conts.Html;
+            //model.yuanzhang = this.ASPxHtmlEditor_yuanzhang.Html;
+            model.conts = Server.HtmlDecode(hd_jianjie.Value);
+            jianjie = model.conts;
             if (fu_logo.HasFile)
             {
                 model.logo = UploadImage(fu_logo);
@@ -75,8 +78,10 @@ public partial class admincp_tbl_xueyuan : System.Web.UI.Page
             zs.Model.Tbl_Xueyuan model =new zs.Model.Tbl_Xueyuan();
             model.name = this.tb_name.Text;
             model.nameen = this.tb_nameen.Text;
-            model.yuanzhang = this.ASPxHtmlEditor_yuanzhang.Html;
-            model.conts = this.ASPxHtmlEditor_conts.Html;
+            //model.yuanzhang = this.ASPxHtmlEditor_yuanzhang.Html;
+            //model.conts = this.ASPxHtmlEditor_conts.Html;
+            model.conts = Server.HtmlDecode(hd_jianjie.Value);
+            jianjie = model.conts;
             if (fu_logo.HasFile)
             {
                 model.logo = UploadImage(fu_logo);
@@ -92,6 +97,11 @@ public partial class admincp_tbl_xueyuan : System.Web.UI.Page
             if (fu_image3.HasFile)
             {
                 model.image3 = UploadImage(fu_image3);
+            }
+            if (string.IsNullOrEmpty(model.name))
+            {
+                this.Label1.Text = "信息不完整！";
+                return;
             }
             bll.Add(model);
             this.Label1.Text = "保存成功！";
@@ -135,5 +145,11 @@ public partial class admincp_tbl_xueyuan : System.Web.UI.Page
             //Label1.Text = "Cannot accept files of this type.";
         }
         return Dir;
+    }
+    protected void btn_delete_Click(object sender, EventArgs e)
+    {
+        int id = SiteAbout.gInt("id");
+        bll.Delete(id);
+        Response.Redirect("./tbl_xueyuan.aspx");
     }
 }

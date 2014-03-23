@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admincp/MasterAdmin.master" AutoEventWireup="true" CodeFile="tbl_news.aspx.cs" Inherits="admincp_tbl_news" %>
-<%@ Register src="C_tbl_Guide.ascx" tagname="C_tbl_Guide" tagprefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-    <script src="./js/artDialog.js?skin=black" type="text/javascript"></script>
+    <script src="./js/artDialog.js?skin=idialog" type="text/javascript"></script>
     <script>
         function tan(num) {
             art.dialog({
@@ -26,7 +25,7 @@ function Button2_onclick() {
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 <div id="content">
         <div id="main">
-            <table style="width: 100%;" class="fullwidth">
+            <table style="width: 100%;" class="table">
             <thead>
                 <tr>
                     <td>
@@ -79,32 +78,14 @@ function Button2_onclick() {
             <asp:HyperLink ID="LastPaeg" runat="server" Text="尾页"></asp:HyperLink>
         跳转到<asp:Literal ID="Literal1" runat="server"></asp:Literal>页
         </div>
-            <input id="Button2" type="button" value="添加新闻" class="button" 
+            <input id="Button2" type="button" value="添加新闻" class="btn btn-default" 
                 onclick="tan(0)" onclick="return Button2_onclick()" />
             <hr />
-            <uc1:C_tbl_Guide ID="C_tbl_Guide1" runat="server" />
         </div>
     </div>
     <!-- End of Main Content -->
     <!-- Sidebar -->
-    <div id="sidebar">
-        <h2>
-            日历</h2>
-        <!-- Datepicker -->
-        <div id="datepicker">
-        </div>
-        <!-- End of Datepicker -->
-        <!-- Statistics -->
-        <h2>
-            统计</h2>
-        <p>
-            <b>新闻:</b> 2201</p>
-        <p>
-            <b>留言:</b> 17092</p>
-        <p>
-            <b>用户:</b> 3788</p>
-        <!-- End of Statistics -->
-    </div>
+    
     <!-- End of Sidebar -->
 </asp:Content>
 

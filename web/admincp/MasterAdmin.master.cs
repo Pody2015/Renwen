@@ -31,10 +31,10 @@ public partial class admincp_MasterAdmin : System.Web.UI.MasterPage
             int fid = ri.FunctionID.Value;
             zs.Model.Sys_Function fun = bllf.GetModel(fid);
             sb.Append("<li>");
-            sb.Append("<a href='" + fun.Assembly + "'>");
+            sb.Append("<a href='" + fun.Assembly + "'><i class=\"icon-double-angle-right\"></i><span class=\"menu-text\">");
             sb.Append(fun.FunctionDescription);
-            sb.Append("</a>");
-            sb.Append("</li>");
+            sb.Append("</span></a>");
+            sb.Append("</li>\n\r");
         }
         return sb.ToString();
     }
