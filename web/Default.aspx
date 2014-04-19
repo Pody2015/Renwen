@@ -9,37 +9,41 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div id="content" class="fixed">
-        <div id="slideshow-index">
-            <ul>
-                <li style="position: absolute; top: 0px; left: 0px; width: 1000px; height: 360px;
-                    z-index: 3; opacity: 0; display: none;">
-                    <img src="./styles/images/1000x360-1.png" width="1000" height="360" alt="校训" />
-                    <div class="slidetext">
-                        <h3>浙江树人大学校训</h3>
-                        <p>崇德重智，树人为本</p>
+        <section id="slider">
+            <div class="container">
+                <div class="row">
+                    <div class="span12">
+                        <div id="mainslider" class="flexslider">
+                            <ul class="slides">
+                                <li>
+                                    <img src="./styles/images/1000x360-1.png" alt="" />
+                                    <div class="slide-caption">
+                                        <h3 class="slide-title">浙江树人大学校训</h3>
+                                        <p class="slide-subtitle">崇德重智，树人为本</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="./styles/images/1000x360-2.png" alt="" />
+                                    <div class="slide-caption">
+                                        <h3 class="slide-title">浙江树人大学</h3>
+                                        <p class="slide-subtitle">校园一角</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="./styles/images/1000x360-3.png" alt="" />
+                                    <div class="slide-caption">
+                                        <h3 class="slide-title">浙江树人大学</h3>
+                                        <p class="slide-subtitle">体育馆</p>
+                                    </div>
+                                </li>
+                                
+                            </ul>
+                        </div>
                     </div>
-                </li>
-                <li style="position: absolute; top: 0px; left: 0px; width: 1000px; height: 360px;
-                    z-index: 3; opacity: 0; display: none;">
-                    <img src="./styles/images/1000x360-2.png" width="1000" height="360" alt="校园一角" />
-                    <div class="slidetext">
-                        <h3>浙江树人大学</h3>
-                        <p>校园一角</p>
-                    </div>
-                </li>
-                <li style="position: absolute; z-index: 4; top: 0px; left: 0px; display: block; width: 1000px;
-                    height: 360px; opacity: 1;">
-                    <img src="./styles/images/1000x360-3.png" width="1000" height="360" alt="体育馆" />
-                    <div class="slidetext">
-                        <h3>浙江树人大学</h3>
-                        <p>体育馆</p>
-                    </div>
-                </li>
-            </ul>
-            <div id="index-slideshow-pager">
-                <a href="#" class="">1</a> <a href="#" class="">2</a> <a href="#" class="activeSlide">
-                    3</a></div>
-        </div>
+                </div>
+            </div>
+        </section>
+
         <div class="fixed">
             <div class="col280">
                 <h1>

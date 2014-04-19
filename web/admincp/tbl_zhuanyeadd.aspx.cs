@@ -32,7 +32,7 @@ public partial class admincp_tbl_zhuanyeadd : System.Web.UI.Page
             {
                 zs.Model.Tbl_Zhuanye model = bll.GetModel(int.Parse(ids));
                 this.tb_name.Text = model.name;
-                this.tb_cont.Html = model.cont;
+                //this.tb_cont.Html = model.cont;
                 this.ddl_xueyuanid.SelectedValue = model.xueyuanid.Value.ToString();
                 this.btn_add.Text = "修改";
             }
@@ -47,7 +47,7 @@ public partial class admincp_tbl_zhuanyeadd : System.Web.UI.Page
             {
                 zs.Model.Tbl_Zhuanye model = bll.GetModel(int.Parse(ids));
                 model.name = this.tb_name.Text.Trim();
-                model.cont = this.tb_cont.Html;
+                //model.cont = this.tb_cont.Html;
                 model.xueyuanid = int.Parse(this.ddl_xueyuanid.SelectedValue);
                 bll.Update(model);
                 BindData();
@@ -56,7 +56,7 @@ public partial class admincp_tbl_zhuanyeadd : System.Web.UI.Page
             {
                 zs.Model.Tbl_Zhuanye model = new zs.Model.Tbl_Zhuanye();
                 model.name = this.tb_name.Text.Trim();
-                model.cont = this.tb_cont.Html;
+                //model.cont = this.tb_cont.Html;
                 model.xueyuanid = int.Parse(this.ddl_xueyuanid.SelectedValue);
                 bll.Add(model);
             }

@@ -1,0 +1,80 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "..\BLL\BLL.csproj", "{73AA75B4-2FBB-4130-9DC5-4412FC144174}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "model", "..\model\model.csproj", "{BE2A9B80-7891-4B61-AC3E-649651FECCE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlserDAL", "..\SqlserDAL\SqlserDAL.csproj", "{40CE9994-F5D3-469D-AAD9-C0B468CF493D}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "web", "..\web", "{86D5299B-04F2-4E4B-B68C-1D3173D0A340}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = "SAK"
+		SccAuxPath = "SAK"
+		SccLocalPath = "SAK"
+		SccProvider = "SAK"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/web"
+		Debug.AspNetCompiler.PhysicalPath = "..\web\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\web\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/web"
+		Release.AspNetCompiler.PhysicalPath = "..\web\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\web\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "12027"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs14
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ..\\BLL\\BLL.csproj
+		SccProjectName1 = ../BLL
+		SccLocalPath1 = ..\\BLL
+		SccProjectUniqueName2 = ..\\model\\model.csproj
+		SccProjectName2 = ../model
+		SccLocalPath2 = ..\\model
+		SccProjectUniqueName3 = ..\\SqlserDAL\\SqlserDAL.csproj
+		SccProjectName3 = ../SqlserDAL
+		SccLocalPath3 = ..\\SqlserDAL
+		SccWebProject4 = true
+		SccProjectUniqueName4 = ..\\web
+		SccProjectName4 = ../web
+		SccLocalPath4 = ..\\web
+		SccProjectEnlistmentChoice4 = 2
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{73AA75B4-2FBB-4130-9DC5-4412FC144174}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73AA75B4-2FBB-4130-9DC5-4412FC144174}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73AA75B4-2FBB-4130-9DC5-4412FC144174}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73AA75B4-2FBB-4130-9DC5-4412FC144174}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE2A9B80-7891-4B61-AC3E-649651FECCE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE2A9B80-7891-4B61-AC3E-649651FECCE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE2A9B80-7891-4B61-AC3E-649651FECCE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE2A9B80-7891-4B61-AC3E-649651FECCE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40CE9994-F5D3-469D-AAD9-C0B468CF493D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40CE9994-F5D3-469D-AAD9-C0B468CF493D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40CE9994-F5D3-469D-AAD9-C0B468CF493D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40CE9994-F5D3-469D-AAD9-C0B468CF493D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86D5299B-04F2-4E4B-B68C-1D3173D0A340}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86D5299B-04F2-4E4B-B68C-1D3173D0A340}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86D5299B-04F2-4E4B-B68C-1D3173D0A340}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{86D5299B-04F2-4E4B-B68C-1D3173D0A340}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

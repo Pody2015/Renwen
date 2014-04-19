@@ -1,110 +1,152 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" ViewStateMode="Disabled" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="zh"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="zh"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="zh"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="zh"> <!--<![endif]-->
+
 <head runat="server">
-<title></title>
-<script src="js/jquery-1.5.2.min.js" type="text/javascript"></script>
+    <meta name="viewport" content="width=100%; initial-scale=1; maximum-scale=1; minimum-scale=1; user-scalable=no;" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="temple/images/apple-touch-icon-144-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="temple/images/apple-touch-icon-114-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="temple/images/apple-touch-icon-72-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" href="temple/images/apple-touch-icon-57-precomposed.png" />
+    <title>Home Page</title>
+    <link href="temple/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+    <link href="temple/css/style.css" type="text/css" rel="stylesheet" />
+    <link href="temple/css/prettyPhoto.css" type="text/css" rel="stylesheet" />
+   <%-- <link href="temple/css/font-icomoon.css" type="text/css" rel="stylesheet" />--%>
+    <link href="temple/css/font-awesome.css" type="text/css" rel="stylesheet" />
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="assets/css/font-awesome-ie7.css"/>
+    <![endif]-->
+    <script type="text/javascript" src="temple/js/jquery.min.js"></script>
+    <script type="text/javascript" src="temple/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="temple/js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="temple/js/jquery.quicksand.js"></script>
+    <script type="text/javascript" src="temple/js/superfish.js"></script>
+    <script type="text/javascript" src="temple/js/hoverIntent.js"></script>
+    <script type="text/javascript" src="temple/js/jquery.flexslider.js"></script>
+    <script type="text/javascript" src="temple/js/jflickrfeed.min.js"></script>
+    <script type="text/javascript" src="temple/js/jquery.prettyPhoto.js"></script>
+    <script type="text/javascript" src="temple/js/jquery.elastislide.js"></script>
+    <script type="text/javascript" src="temple/js/jquery.tweet.js"></script>
+    <script type="text/javascript" src="temple/js/smoothscroll.js"></script>
+    <script type="text/javascript" src="temple/js/jquery.ui.totop.js"></script>
+    <script type="text/javascript" src="temple/js/main.js"></script>
+    <script type="text/javascript" src="temple/js/ajax-mail.js"></script>
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
 <asp:ContentPlaceHolder ID="head" runat="server">
 </asp:ContentPlaceHolder>
-<link href="styles/style.css" rel="stylesheet" type="text/css" />
-<script src="js/jquery.accordion.js" type="text/javascript"></script>
-<script src="js/jquery.cycle.all.min.js" type="text/javascript"></script>
-<script src="js/jquery.prettyPhoto.js" type="text/javascript"></script>
-<link href="styles/css.prettyPhoto.css" rel="stylesheet" type="text/css" />
-<script src="js/jquery.tabify-1.4.js" type="text/javascript"></script>
-<script src="js/jquery.tipsy.js" type="text/javascript"></script>
-<link href="styles/css.tipsy.css" rel="stylesheet" type="text/css" />
-<script src="js/jquery.validity.js" type="text/javascript"></script>
-<link href="styles/css.validity.css" rel="stylesheet" type="text/css" />
-<script src="js/plugins.js" type="text/javascript"></script>
-<script src="js/scripts.js" type="text/javascript"></script>
 </head>
 <body>
-    <div id="wrap">
-        <div id="header" class="fixed">
-            <div id="logo-header-widget-1" class="fixed">
-                <a id="logo" href="#" title="浙江树人大学招生网"><img src="./styles/images/logo.png" alt="浙江树人大学" /></a>
-                <div id="header-widget-1" class="col205 last text-right">
-                    <p class="last">有什么问题？</p>
-                    <h5>热线电话 - <strong>(0571) 88297000</strong></h5>
-                </div>
+    <!--top menu-->
+<section id="top-menu">
+    <div class="container">
+        <div class="row">
+         </div>
+    </div>
+</section>
+<!--header-->
+<header id="header1">
+    <div class="container">
+        <div class="row header-top">
+            <div class="span5 logo">
+                <a class="logo-img" href="./index.aspx" title="浙江树人大学"><img src="./styles/images/logo.png" alt="浙江树人大学" /></a>
+                
             </div>
-            <div id="menu-header-wigdet-2" class="fixed">
-                <div class="col655">
-                    <ul id="dropdown-menu" class="fixed">
-                    <%= GetGuides() %>
-                    </ul>
-                </div>
-                <div id="header-widget-2" class="col205 last">
-                    <div id="search">
-                        <fieldset>
-                            <input type="text" name="wq" class="text" id="search-input" value="search..." onfocus="if(this.value==&#39;search...&#39;)this.value=&#39;&#39;;"
-                                onblur="if(this.value==&#39;&#39;)this.value=&#39;search...&#39;;" />
-                            <input type="submit" class="search-submit-btn" value="" onclick="javascript:googlesearch()"/>
-                        </fieldset>
-                    </div>
+            <div class="span7 social-container">
+                <p class="phone hidden-phone"><i class="icon-envelope"></i> <a href="mailto:15@qq.com">renwenxueyuan@163.com</a></p>
+                <p class="phone hidden-phone"><i class="icon-bell"></i> 联系电话 (0571)88297034</p>
+                <div class="top-social">
+
                 </div>
             </div>
         </div>
-        <div id="content" class="fixed">
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
-        </div>
-        <div id="footer" class="fixed">
-            <div class="fixed">
-                <div id="footer-widget-1" class="col205">
-                    <h6>关于我们</h6>
-                    <p class="last">
-                        浙江树人大学招生办公室，位于杭州市拱墅区树人街8号，浙江树人大学南校区行政楼。主要负责学校招考信息的发布、管理工作。我们的团队是一支积极向上、善思求变的团队。
-                        <a href="./About.aspx">更多信息</a></p>
-                </div>
-                <div id="footer-widget-2" class="col205">
-                    <h6>网站导航</h6>
-                    <ul class="footer-nav">
-                        <li><a target="_blank" href="http://www.zjsru.edu.cn">浙江树人大学官网</a></li>
-                        <li><a target="_blank" href="http://jwc.zjsru.edu.cn">浙江树人大学教务处</a></li>
-                        <li><a target="_blank" href="http://172.31.2.44">内网OA办公系统</a></li>
-                        <li><a target="_blank" href="http://kyc.zjsru.edu.cn/">树大科研处</a></li>
-                        <li><a target="_blank" href="http://10.10.10.233/c2c/main.aspx">树大就业管理中心</a></li>
+        <div class="row header-nav">
+           <div class="span12">
+                <nav id="menu" class="clearfix">
+                    <ul>
+                        <%= GetGuides() %>
                     </ul>
-                </div>
-                <div id="footer-widget-3" class="col205">
-                    <h6>联系信息</h6>
-                    <p class="last">
-                        浙江省杭州市拱墅区树人街8号<br />
-                        邮政编码:310015<br />
-                        TEL:(0571-88297000 88297025)<br />
-                        Email:<a href="mailto:zjsru7000@126.com">zjsru7000@126.com</a><br />
-                        Email:dbhelp@163.com(本邮箱仅用于发送网站留言)
-                    </p>
-                </div>
-                <div id="footer-widget-4" class="col205 last">
-                    <h6>加入我们</h6>
-                    <p class="newsletter-subscribe-msg">
-                        欢迎各位在校学生加入我们的团队，这里必将成为你工作的新起点。主要工作内容是暑期为广大考生提供各类解答服务。
-                    </p>
-                </div>
-            </div>
-            <div class="hr">
-            </div>
-            <div class="fixed">
-                <div id="footer-widget-5" class="col430">
-                    <p class="last"><asp:Label ID="lb_copy" runat="server" Text=""></asp:Label></p>
-                </div>
-                <div id="footer-widget-6" class="col430 last">
-                    <p class="last float-left">到别处找到我们:</p>
-                    <ul id="social-media" class="fixed">
-                        <li class="fixed">
-                            <img src="./styles/images/sina.png" width="16" height="16" alt="sina" />
-                            <a target="_blank" href="http://weibo.com/u/2087983637">新浪微博</a></li>
-                        <li class="fixed">
-                            <img src="./styles/images/tecent.png" width="16" height="16" alt="tecent" />
-                            <a href="#">腾讯微博</a></li>
-                    </ul>
-                </div>
+                </nav>
+               <fieldset class="top-search pull-right">
+                   <input type="text" name="wq" class="span3" id="search-input" value="search..." onfocus="if(this.value==&#39;search...&#39;)this.value=&#39;&#39;;"
+                       onblur="if(this.value==&#39;&#39;)this.value=&#39;search...&#39;;" />
+                   <button type="button" class="btn"  onclick="javascript: googlesearch()"><i class="icon-search-form"></i></button>
+               </fieldset>
+               <!--<form class="top-search pull-right">-->
+                       <!--<input type="text" placeholder="text here..." class="span3">-->
+                       <!--<button type="button" class="btn"><i class="icon-search-form"></i></button>-->
+               <!--</form>-->
             </div>
         </div>
     </div>
+</header>
+
+<section id="container">
+
+<div class="container">
+
+        
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+</div>
+        
+</section>
+<!--footer-->
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="span4">
+                <p>联系信息</p>
+                <address>
+                    <p><i class="icon-map-marker"></i> 浙江省杭州市拱墅区树人街8号, 310015</p>
+                    <p><i class="icon-phone"></i> (0571) 88297034</p>
+                    <p><i class="icon-phone-sign"></i> (+86) 15088699874</p>
+                    <p><i class="icon-envelope"></i> <a href="mailto:#">info@email.com</a></p>
+                </address>
+            </div>
+            
+            <div class="span4">
+                <p class="heading1">关于我们</p>
+                <p>学院始终以“快乐树人”为理念，狠抓教学质量的提高，强化教风与学风建设，努力弘扬人文精神，认真实施学生成才规划与素质拓展，积极打造“考研文化”。
+                    学院积极开展丰富多彩的校园文化活动，不断培养出具有较强综合素质的高级应用型人才。  
+                </p>
+                
+                
+            </div>
+            <div class="span4">
+                <p class="heading1">关注我们</p>
+                <ul class="footer-navigate">
+                    <li>二维码</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--footer menu-->
+<section id="footer-menu">
+    <div class="container">
+        <div class="row">
+            <div class="span4">
+                <p class="copyright"><asp:Label ID="lb_copy" runat="server" Text=""></asp:Label></p>
+            </div>
+            <div class="span8 hidden-phone">
+                <ul class="pull-right">
+                    <li><a href="./About.aspx#">联系我们</a></li>
+                    <li><a href="#">友情链接</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
 <script type="text/javascript">
     function googlesearch() {
         var wq = document.getElementsByName("wq")[0].value;
