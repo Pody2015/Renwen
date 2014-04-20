@@ -26,7 +26,7 @@ public partial class video : System.Web.UI.Page
         conts = model.conts;
         videourl = model.videourl;
 
-        this.Repeater1.DataSource = bll.GetList(3, "", "newid()");
+        this.Repeater1.DataSource = bll.GetList(5, "", "newid()");
         this.Repeater1.DataBind();
     }
 }
