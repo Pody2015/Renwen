@@ -10,7 +10,7 @@
 /*-----------------------------------------------------------------------------------*/
 
 body {
-    background: #FFFFFF;
+    background: #FFFFFF url(../images/cubes.png) repeat;
     font-family: 'Microsoft YaHei', 'Open Sans', sans-serif;
     font-weight: 300;
 }
@@ -39,7 +39,7 @@ button::-moz-focus-inner {border: 0;}
 h1, h2, h3, h4, h5, h6, #footer .heading {
     font-family: 'Segoe UI','Ubuntu',sans-serif;
     font-weight: 300;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 #page-sidebar h4, #sidebar h4{
     font-weight: 600;
@@ -84,7 +84,7 @@ a:hover {color: #F7941D; text-decoration: none;}
 #top-menu {
     background-color: #383838;
     color: #999999;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     padding: 3px 0;
 }
 #top-menu a {color: #999999;}
@@ -410,7 +410,7 @@ li.current {
 @media (max-width: 767px) {
     .container {padding-left: 20px; padding-right: 20px; }
 }
-#container {position: relative; margin-top: 30px;}
+#container {position: relative; margin-top: 0px;}
 #container .container {padding-bottom: 50px;}
 #container .row.last {margin-bottom: 30px;}
 .row.da-thumbs {margin-bottom: 0 !important;}
@@ -1448,7 +1448,7 @@ input.search-query,
 }
 
 .thumbnail {padding: 0; border: none;}
-.well {background: #FAFAFA;}
+.well {background: #eeeeee;}
 .btn {background-image: none; border: 0 none;}
 
 .thumbnail {

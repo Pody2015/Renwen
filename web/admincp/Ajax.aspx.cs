@@ -69,7 +69,14 @@ public partial class admincp_Ajax : System.Web.UI.Page
             modelGuide.name = name;
             Response.ContentType = "application/json";
             if (bllGuide.Update(modelGuide))
+            {
+                if (type == "news")
+                {
+                    modelGuide.url = "./newslist.aspx?id=" + ApplicationMethod.encript(id.ToString());
+                    bllGuide.Update(modelGuide);
+                }
                 Response.Write("{\"status\":\"true\"}");
+            }
             else
                 Response.Write("{\"status\":\"false\"}");
         }
@@ -84,8 +91,17 @@ public partial class admincp_Ajax : System.Web.UI.Page
             modelGuide.url = url;
             modelGuide.name = name;
             Response.ContentType = "application/json";
-            if(bllGuide.Add(modelGuide)>0)
+            int ret =bllGuide.Add(modelGuide);
+            if ( ret > 0)
+            {
+                if (type == "news")
+                {
+                    modelGuide.id = ret;
+                    modelGuide.url = "./newslist.aspx?id=" + ApplicationMethod.encript(ret.ToString());
+                    bllGuide.Update(modelGuide);
+                }
                 Response.Write("{\"status\":\"true\"}");
+            }
             else
                 Response.Write("{\"status\":\"false\"}");
         }

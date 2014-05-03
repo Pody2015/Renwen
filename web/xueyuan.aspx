@@ -14,12 +14,12 @@
         <div class="fixed">
             <div class="col580">
                 <h1 class="last">
-                    浙江树人大学
-                    九大学院简介</h1>
+                    浙江树人大学 人文学院
+                    专业简介</h1>
             </div>
             <div class="col280 last">
                 <ul id="portfolio-filter" class="fixed">
-                    <li class=""><a href="#">所有学院排名不分先后</a>
+                    <li class=""><a href="#">排名不分先后</a>
                         <ul class="filter-options" style="display: block; visibility: hidden;">
                             <%= GetXueyuanList() %>
                         </ul>

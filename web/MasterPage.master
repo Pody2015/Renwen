@@ -75,7 +75,7 @@
                     </ul>
                 </nav>
                <fieldset class="top-search pull-right">
-                   <input type="text" name="wq" class="span3" id="search-input" value="search..." onfocus="if(this.value==&#39;search...&#39;)this.value=&#39;&#39;;"
+                   <input type="text" style="width:110px" name="wq" class="span3" id="search-input" value="search..." onfocus="if(this.value==&#39;search...&#39;)this.value=&#39;&#39;;"
                        onblur="if(this.value==&#39;&#39;)this.value=&#39;search...&#39;;" />
                    <button type="button" class="btn"  onclick="javascript: googlesearch()"><i class="icon-search-form"></i></button>
                </fieldset>
